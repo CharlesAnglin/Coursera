@@ -8,6 +8,7 @@ object main extends App with week1 with week2 {
   val union56 = union(set5,set6)
   val int5 = intersection(union56, set5)
   val dif5 = diff(set4, union56)
+  val union46 = union(set4, set6)
 
   def filter5(int: Int) = {
     if(int == 5){
@@ -17,10 +18,25 @@ object main extends App with week1 with week2 {
     }
   }
 
-  val filtered = filter(union56, filter5)
+  def isEven(int: Int) = {
+    if(int % 2 == 0){
+      true
+    } else {
+      false
+    }
+  }
 
-  println(contains(filtered, 4))
-  println(contains(filtered, 5))
-  println(contains(filtered, 6))
+  def double(int: Int) = {
+    int * 2
+  }
+
+  val filtered = filter(union56, filter5)
+  val mapped = map(union56, double)
+
+  println(contains(mapped, 5))
+  println(contains(mapped, 6))
+  println(contains(mapped, 10))
+  println(contains(mapped, 11))
+  println(contains(mapped, 12))
 
 }
