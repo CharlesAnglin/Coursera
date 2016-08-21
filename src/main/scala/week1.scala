@@ -1,4 +1,6 @@
-trait week1 {
+package examples
+
+object week1 {
 
   def pascal(c: Int, r: Int): Int = {
     if (c == 0 || c == r) {

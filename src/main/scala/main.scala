@@ -1,6 +1,9 @@
-object main extends App with week1 with week2 {
+import examples.week1._
+import examples.week2._
 
-//  println(countChange(4, List(1,2)))
+object main extends App {
+
+  println(countChange(4, List(1,2)))
 
   val set4 = singletonSet(4)
   val set5 = singletonSet(5)

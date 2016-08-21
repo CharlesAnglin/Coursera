@@ -1,4 +1,6 @@
-trait week2 {
+package examples
+
+object week2 {
 
   type Set = Int => Boolean
 
