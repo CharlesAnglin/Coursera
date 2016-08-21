@@ -4,7 +4,7 @@
 		module="courserascala$sbt_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20160820222534"
+		publication="20160821113736"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>

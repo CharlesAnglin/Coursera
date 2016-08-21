@@ -4,66 +4,15 @@ trait week2 {
 
   def contains(s: Set, elem: Int): Boolean = s(elem)
 
+  def singletonSet(int: Int): Set = (input: Int) => if(input==int) true else false
 
-  def singletonSet(int: Int): Set = {
-    def sinSet(input: Int) = {
-      if (input == int) {
-        true
-      } else {
-        false
-      }
-    }
+  def union(setA: Set, setB: Set): Set = (input: Int) => if(contains(setA, input) || contains(setB, input)) true else false
 
-    sinSet
-  }
+  def intersection(setA: Set, setB: Set): Set = (input: Int) => if(contains(setA, input) && contains(setB, input)) true else false
 
-  def union(setA: Set, setB: Set): Set = {
-    def returnSet(input: Int) = {
-      if (contains(setA, input) || contains(setB, input)) {
-        true
-      } else {
-        false
-      }
-    }
+  def diff(setA: Set, setB: Set): Set = (input: Int) => if(contains(setA, input) && !contains(setB, input)) true else false
 
-    returnSet
-  }
-
-  def intersection(setA: Set, setB: Set): Set = {
-    def returnSet(input: Int) = {
-      if (contains(setA, input) && contains(setB, input)) {
-        true
-      } else {
-        false
-      }
-    }
-
-    returnSet
-  }
-
-  def diff(setA: Set, setB: Set): Set = {
-    def returnSet(input: Int) = {
-      if (contains(setA, input) && !contains(setB, input)) {
-        true
-      } else {
-        false
-      }
-    }
-
-    returnSet
-  }
-
-  def filter(set: Set, p: Int => Boolean): Set = {
-    def returnSet(input: Int) = {
-      if (set(input)) {
-        p(input)
-      } else {
-        false
-      }
-    }
-
-    returnSet
-  }
+  def filter(set: Set, p: Int => Boolean): Set = (input: Int) => if(set(input)) p(input) else false
 
   def forall(set: Set, p: Int => Boolean): Boolean = {
     def iterator(int: Int): Boolean = {
@@ -93,17 +42,6 @@ trait week2 {
     iterator(-1000)
   }
 
-  def map(set: Set, p: Int => Int) : Set = {
-    def returnSet(input: Int) = {
-      if( exists(set, p(_)==input)){
-        true
-      } else {
-        false
-      }
-    }
-
-    returnSet
-  }
-
+  def map(set: Set, p: Int => Int): Set = (input: Int) => if(exists(set, p(_)==input)) true else false
 
 }
